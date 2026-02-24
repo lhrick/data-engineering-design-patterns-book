@@ -20,9 +20,8 @@ services:
     volumes:
       - /tmp/dedp/ch02/full-loader/data-exposition:/home/data_generator_user/data_generator_output
       - ./generation_configuration.yaml:/home/data_generator_user/generation_configuration.yaml
-    entrypoint:
-      - python3
-        - |
-        pip3 install --no-cache-dir pyyaml && \
-        python3 /home/data_generator_user/data_generator/generate_dataset.py \
-        --config_file /home/data_generator_user/generation_configuration.yaml
+    entrypoint: ["/bin/sh", "-lc"]
+    command: >
+      pip3 install --no-cache-dir pyyaml &&
+      python3 /home/data_generator_user/data_generator/generate_dataset.py
+      --config_file /home/data_generator_user/generation_configuration.yaml
