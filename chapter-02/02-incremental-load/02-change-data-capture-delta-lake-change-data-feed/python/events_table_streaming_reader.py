@@ -19,7 +19,7 @@ if __name__ == "__main__":
     def load_data_to_the_events_table(lock_to_release: Lock):
         partitions = ['date=2023-11-01', 'date=2023-11-02', 'date=2023-11-03',
                       'date=2023-11-04', 'date=2023-11-05', 'date=2023-11-06', 'date=2023-11-07']
-        base_dir = '/tmp/dedp/ch02/incremental-load/change-data-capture/input/'
+        base_dir = 'C:/tmp/dedp/ch02/incremental-load/change-data-capture/input'
         for partition in partitions:
             print(f'Loading partition {partition}')
             path_to_load = f'{base_dir}/{partition}'
