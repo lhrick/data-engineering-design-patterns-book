@@ -18,7 +18,8 @@ services:
     container_name: dedp_test_full_loader_exposition
     user: "0:0"
     volumes:
-      - /tmp/dedp/ch02/incremental-load/change-data-capture/:/home/data_generator_user/data_generator_output
+      # - /tmp/dedp/ch02/incremental-load/change-data-capture/:/home/data_generator_user/data_generator_output
+      - C:\tmp\dedp\ch02\incremental-load\change-data-capture:/home/data_generator_user/data_generator_output
       - ./generation_configuration.yaml:/home/data_generator_user/generation_configuration.yaml
     entrypoint: >
       /bin/sh -lc "pip3 install --no-cache-dir pyyaml faker confluent_kafka psycopg2 &&
